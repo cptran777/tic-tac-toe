@@ -1,0 +1,35 @@
+/********************* WINDOW SIZER ************************/
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/********************** BOARD STYLE ************************/
+
+.board-container {
+  width: 80%;
+}
+
+.board-row {}
+
+.board-el {
+  height: 30px;
+  text-align: center;
+  font: 25px bold Impact, Charcoal, sans-serif;
+}
+
+.board-el p {
+  height: 80%;
+
+}
+
+.mid-row {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.mid-col {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}

@@ -6,6 +6,7 @@
 let express = require('express');
 let path = require('path');
 let bodyparser = require('body-parser');
+let request = require('request');
 require('dotenv').config();
 
 /******************* INIT MIDDLEWARE ***********************/
@@ -26,6 +27,23 @@ app.use(bodyparser.json());
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../client/public/index.html'));
 });
+
+let options = {
+  url: 'http://127.0.0.1:8000/play',
+  body: {'message': 'okay'},
+  json: true,
+  method: 'GET'
+}
+
+// request(options, (err, response, body) => {
+//   if (err) {
+//     throw err;
+//   }
+
+//   console.log('body: ');
+
+//   console.log(body);
+// });
 
 /********************* INIT SERVER *************************/
 
