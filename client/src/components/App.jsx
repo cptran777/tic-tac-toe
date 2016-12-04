@@ -11,7 +11,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div><Board /></div>
+      <div id="app-container">
+        <div id="banner">
+          EXTREME TIC TAC TOE
+        </div>
+        <Board />
+      </div>
     );
   }
 }

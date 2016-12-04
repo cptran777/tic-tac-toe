@@ -5,10 +5,29 @@ html, body {
   width: 100%;
 }
 
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+#app-container {
+  height: 100%;
+  width: 100%;
+}
+
+/********************* BANNER STYLE ************************/
+
+#banner {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  font: 5vw bold Impact, Charcoal, sans-serif;
+}
+
 /********************** BOARD STYLE ************************/
 
 .board-container {
-  width: 80%;
+  width: 50%;
 }
 
 .board-row {}
