@@ -52,3 +52,10 @@ html, body {
   border-left: 2px solid black;
   border-right: 2px solid black;
 }
+
+/********************* VICTORY STYLE ***********************/
+
+.victory-banner {
+  text-align: center;
+  font: 20px bold Impact, Charcoal, sans-serif;
+}
