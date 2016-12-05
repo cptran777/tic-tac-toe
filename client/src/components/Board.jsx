@@ -1,5 +1,9 @@
 import React from 'react';
 
+import Victory from './Victory';
+
+console.log('logging victory: ', Victory);
+
 const RowElement = (props) => {
   
   let fill = ' ';
@@ -44,7 +48,8 @@ class Board extends React.Component {
       board: [['0', '0', '0'],
       ['0', '0', '0'],
       ['0', '0', '0']],
-      turn: 1
+      turn: 1,
+      victor: 0
     }
   }
 
@@ -69,10 +74,18 @@ class Board extends React.Component {
       },
       dataType: 'json',
       success: (data) => {
-        console.log('ajax success: ');
-        console.log(data);
-        this.state.turn = 1
-        this.setState({board: data.board})
+
+        if (data.victory === 0) {
+          this.state.turn = 1;
+          this.setState({board: data.board});   
+        } else {
+          this.state.turn = 3;
+          this.state.victor = data.victory;
+          console.log(data.victory);
+          console.log(typeof data.victory);
+          this.setState({board: data.board});
+        }
+
       },
       error: (err) => {
         console.log(err);
@@ -86,6 +99,7 @@ class Board extends React.Component {
         {this.state.board.map((row, idx) => {
           return <Row data={row} row={idx} setBoard={this.setBoard.bind(this)} key={Math.random() * 30000}/>
         })}
+      <Victory victor={this.state.victor} />
       </div>
     );
   }
